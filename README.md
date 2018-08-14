@@ -1,23 +1,23 @@
-#DogPark
+# DogPark
 **A mobile parking solution built with React Native**
 
-##Features
+## Features
 - Navigates user to nearest available parking space
 - Handles handicapped, motorcycle, and staff parking
 
-##TODO List
+## TODO List
 - Refine UI
 - Add geofications
 - Develop back end
 
-##Installation
-'''
+## Installation
+```
 git clone https://github.com/faiazrahman/dog-park
 cd dog-park
 npm install
-'''
+```
 
-##License
+## License
 The MIT License (MIT)
 
 Copyright (c) 2018 Logan Hernandez and Faiaz Rahman
