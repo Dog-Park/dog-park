@@ -9,8 +9,8 @@ export class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    selHome: true,
-    selNav: false,
+    selHome: false,
+    selNav: true,
     selSet: false
     }
     this._onHome = this._onHome.bind(this);
@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: Constants.BORDER_EDGES,
     borderTopRightRadius: Constants.BORDER_EDGES,
     paddingTop: 7, //20
-    //paddingBottom: 20
+    marginLeft: 20,
+    marginRight: 20
   },
   navButton: {
     flex: 1,

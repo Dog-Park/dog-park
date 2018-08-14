@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: Constants.BACK_COLOR,
     alignItems: 'center',
     paddingTop: 15,
-    paddingLeft: 15,
-    paddingRight: 15
+    //paddingLeft: 15,
+    //paddingRight: 15
   }
 });
