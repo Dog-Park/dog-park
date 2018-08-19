@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableWithoutFeedback, Alert } from 'react-native';
-import { Home } from './Home.js';
-import { Navigate } from './Navigate.js';
-import { Settings } from './Settings.js';
+import { HomeIcon } from './HomeIcon.js';
+import { MapIcon } from './MapIcon.js';
+import { SettingsIcon } from './SettingsIcon.js';
 import { Constants } from './Constants.js';
 
 export class NavigationBar extends React.Component {
@@ -10,26 +10,26 @@ export class NavigationBar extends React.Component {
     super(props);
     this.state = {
     selHome: false,
-    selNav: true,
+    selMap: true,
     selSet: false
     }
     this._onHome = this._onHome.bind(this);
-    this._onNavigate = this._onNavigate.bind(this);
+    this._onMap = this._onMap.bind(this);
     this._onSettings = this._onSettings.bind(this);
   }
 
   _onHome() {
     this.setState({
         selHome: true,
-        selNav: false,
+        selMap: false,
         selSet: false
     });
   }
 
-  _onNavigate() {
+  _onMap() {
     this.setState({
       selHome: false,
-      selNav: true,
+      selMap: true,
       selSet: false
     });
   }
@@ -37,7 +37,7 @@ export class NavigationBar extends React.Component {
   _onSettings() {
     this.setState({
       selHome: false,
-      selNav: false,
+      selMap: false,
       selSet: true
     });
   }
@@ -47,20 +47,20 @@ export class NavigationBar extends React.Component {
       <View style={styles.navBubble}>
         <TouchableWithoutFeedback onPress={this._onHome}>
           <View style={styles.navButton}>
-            <Home highlight={this.state.selHome}/>
+            <HomeIcon highlight={this.state.selHome}/>
           </View>
-        </TouchableWithoutFeedback> //
-        <TouchableWithoutFeedback onPress={this._onNavigate}>
-          <View style={styles.navButton}> 
-            <Navigate highlight={this.state.selNav}/>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={this._onMap}>
+          <View style={styles.navButton}>
+            <MapIcon highlight={this.state.selMap}/>
           </View>
-        </TouchableWithoutFeedback> //
+        </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={this._onSettings}>
           <View style={styles.navButton}>
-            <Settings highlight={this.state.selSet}/>
+            <SettingsIcon highlight={this.state.selSet}/>
           </View>
-        </TouchableWithoutFeedback> //
-      </View> //
+        </TouchableWithoutFeedback>
+      </View>
     );
   }
 }
