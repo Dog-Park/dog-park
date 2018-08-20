@@ -1,18 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import { TopBar } from './TopBar.js';
 import { Constants } from './Constants';
-import Swiper from 'react-native-swiper';
 import MapView from 'react-native-maps';
+import { NavigationBar, _onHome, _onNavigate, _onSettings } from './NavigationBar.js';
 
 export class MainView extends React.Component {
   render() {
     return (
       <View style={styles.talkBubbleSquare} >
-        <Swiper
-          loop={false}
-          showsPagination={false}
-          index={1} >
+        <ScrollView
+          horizontal={true}
+          pagingEnabled={true}
+          showsHorizontalScrollIndicator={false}
+          contentOffset={{x: screenWidth, y: 0}} >
 
           <View style={styles.contentHome}>
             <Text style={styles.titleText}>Home</Text>
@@ -22,7 +23,7 @@ export class MainView extends React.Component {
             <Text style={styles.bodyText}>Currently, DogPark is being implemented in the Planetarium Parking Lot by the Science II Building at California State University, Fresno, with plans of expanding to the Engineering Parking Lot and the Business Parking Lot in the near future. With its mass-manufacture style of sensors and readily-adaptable source code, DogPark can be adopted by essentially any university campus that’s looking to find a way to fix its parking problem.</Text>
           </View>
 
-          <View style={styles.content}>
+          <View style={styles.contentMap}>
             <Text style={styles.text}>"Welcome to the Planetarium Parking Lot!"</Text>
             <MapView
               style={styles.map}
@@ -38,11 +39,14 @@ export class MainView extends React.Component {
           <View style={styles.content}>
             <Text style={styles.text}>"Settings"</Text>
           </View>
-        </Swiper>
+        </ScrollView>
       </View>
     );
   }
-}
+}//
+
+let screenWidth = Dimensions.get('window').width;
+let screenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   talkBubbleSquare: {
@@ -50,16 +54,28 @@ const styles = StyleSheet.create({
     flex: 1,
     //backgroundColor: Constants.MAIN_COLOR,
     //borderRadius: Constants.BORDER_EDGES,
-    //marginTop: 15,
-    //marginBottom: 15
+    marginTop: 15,
+    marginBottom: 15
   },
   content: {
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
     backgroundColor: Constants.MAIN_COLOR,
     borderRadius: Constants.BORDER_EDGES,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    width: screenWidth - 40
+  },
+  contentMap: {
+    marginLeft: 20,
+    marginRight: 20,
+    backgroundColor: Constants.MAIN_COLOR,
+    borderRadius: Constants.BORDER_EDGES,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: screenWidth - 40
   },
   text: {
     color: 'white'
@@ -87,11 +103,13 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
   contentHome: {
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
     backgroundColor: Constants.MAIN_COLOR,
     borderRadius: Constants.BORDER_EDGES,
     flex: 1,
     alignItems: 'flex-start',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    width: screenWidth - 40
   }
 });
