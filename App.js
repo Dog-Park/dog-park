@@ -14,7 +14,7 @@ export default class App extends React.Component {
         <Title />
         <MainView />
         <NavigationBar />
-      </View> //
+      </View>
     );
   }
 }

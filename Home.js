@@ -8,13 +8,13 @@ export class Home extends React.Component {
       return (
         <View>
           <Image source={require('./Images/home_icon_dark.png')} style={styles.infoIcon} />
-        </View> //
+        </View>
         );
     } else {
       return (
         <View>
           <Image source={require('./Images/home_icon_light.png')} style={styles.infoIcon} />
-        </View> //
+        </View>
         );
     }
   }

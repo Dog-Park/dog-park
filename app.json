@@ -1,5 +1,15 @@
-{
-  "expo": {
-    "sdkVersion": "27.0.0"
-  }
-}
+ {
+   "expo": {
+    "name": "Your App Name",
+    "icon": "./Images/map_icon_dark.png",
+    "version": "1.0.0",
+    "slug": "your-app-slug",
+    "sdkVersion": "27.0.0",
+    "ios": {
+      "bundleIdentifier": "com.plex.dogpark"
+    },
+    "android": {
+      "package": "com.plex.dogpark"
+    }
+   }
+ }

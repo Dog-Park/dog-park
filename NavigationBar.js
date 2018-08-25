@@ -49,18 +49,18 @@ export class NavigationBar extends React.Component {
           <View style={styles.navButton}>
             <Home highlight={this.state.selHome}/>
           </View>
-        </TouchableWithoutFeedback> //
+        </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={this._onNavigate}>
           <View style={styles.navButton}> 
             <Navigate highlight={this.state.selNav}/>
           </View>
-        </TouchableWithoutFeedback> //
+        </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={this._onSettings}>
           <View style={styles.navButton}>
             <Settings highlight={this.state.selSet}/>
           </View>
-        </TouchableWithoutFeedback> //
-      </View> //
+        </TouchableWithoutFeedback>
+      </View>
     );
   }
 }
