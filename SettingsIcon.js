@@ -8,13 +8,13 @@ export class SettingsIcon extends React.Component {
       return (
         <View>
           <Image source={require('./Images/settings_icon_dark.png')} style={styles.settingsIcon} />
-        </View> //
+        </View>
         );
     } else {
       return (
         <View>
           <Image source={require('./Images/settings_icon_light.png')} style={styles.settingsIcon} />
-        </View> //
+        </View>
         );
     }
   }

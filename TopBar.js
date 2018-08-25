@@ -6,7 +6,7 @@ export class TopBar extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar />
-      </View> //
+      </View>
     );
   }
 }
