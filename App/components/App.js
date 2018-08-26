@@ -1,7 +1,3 @@
-//////////////////////////////////////////
-/////////////// NOT IN USE ///////////////
-//////////////////////////////////////////
-
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TopBar } from './TopBar.js';
@@ -10,7 +6,7 @@ import { Title } from './Title.js';
 import { NavigationBar } from './NavigationBar.js';
 import { Constants } from './Constants.js';
 
-const App = () => (
+export const App = () => (
   <View style={styles.container}>
     <TopBar />
     <Title />
@@ -18,8 +14,6 @@ const App = () => (
     <NavigationBar />
   </View>
 )
-
-export default App;
 
 const styles = StyleSheet.create({
   container: {
