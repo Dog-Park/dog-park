@@ -6,16 +6,18 @@ import { Title } from './Title.js';
 import { NavigationBar } from './NavigationBar.js';
 import { Constants } from './Constants.js';
 
-const App = () => (
-  <View style={styles.container}>
-    <TopBar />
-    <Title />
-    <MainView />
-    <NavigationBar />
-  </View>
-)
-
-export default App;
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <TopBar />
+        <Title />
+        <MainView />
+        <NavigationBar />
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
