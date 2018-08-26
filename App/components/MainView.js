@@ -6,6 +6,10 @@ import MapView from 'react-native-maps';
 import { NavigationBar, _onHome, _onNavigate, _onSettings } from './NavigationBar.js';
 
 export class MainView extends React.Component {
+  handleScroll() {
+    alert("scrolled");
+  }
+
   render() {
     return (
       <View style={styles.talkBubbleSquare} >
@@ -13,7 +17,8 @@ export class MainView extends React.Component {
           horizontal={true}
           pagingEnabled={true}
           showsHorizontalScrollIndicator={false}
-          contentOffset={{x: screenWidth, y: 0}} >
+          contentOffset={{x: screenWidth, y: 0}}
+          onMomentumScrollEnd={this.handleScroll} >
 
           <View style={styles.contentHome}>
             <Text style={styles.titleText}>Home</Text>
@@ -43,7 +48,7 @@ export class MainView extends React.Component {
       </View>
     );
   }
-}//
+}
 
 let screenWidth = Dimensions.get('window').width;
 let screenHeight = Dimensions.get('window').height;
