@@ -7,13 +7,13 @@ export class MapIcon extends React.Component {
     if(this.props.highlight) {
       return (
         <View style={styles.divs} >
-          <Image source={require('./Images/map_icon_dark.png')} style={styles.mapIcon} />
+          <Image source={require('../Images/map_icon_dark.png')} style={styles.mapIcon} />
         </View>
       );
     } else {
       return (
         <View style={styles.divs} >
-          <Image source={require('./Images/map_icon_light.png')} style={styles.mapIcon} />
+          <Image source={require('../Images/map_icon_light.png')} style={styles.mapIcon} />
         </View>
       );
     }

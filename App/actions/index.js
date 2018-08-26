@@ -1,7 +1,7 @@
 export const gotoHome = () => ({
   type: 'GOTO_HOME'
 })
-​
+
 export const gotoMap = () => ({
   type: 'GOTO_MAP'
 })

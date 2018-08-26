@@ -1,6 +1,6 @@
 import { Pages } from '../actions'
 
-const gotoPage = (state = Pages.GOTO_MAP, action) => {
+const rootReducer = (state = Pages.GOTO_MAP, action) => {
   switch (action.type) {
     case 'GOTO_HOME':
     case 'GOTO_MAP':
@@ -11,4 +11,4 @@ const gotoPage = (state = Pages.GOTO_MAP, action) => {
   }
 }
 
-export default gotoPage;
+export default rootReducer;

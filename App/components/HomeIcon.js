@@ -7,13 +7,13 @@ export class HomeIcon extends React.Component {
     if(this.props.highlight) {
       return (
         <View>
-          <Image source={require('./Images/home_icon_dark.png')} style={styles.infoIcon} />
+          <Image source={require('../Images/home_icon_dark.png')} style={styles.infoIcon} />
         </View>
         );
     } else {
       return (
         <View>
-          <Image source={require('./Images/home_icon_light.png')} style={styles.infoIcon} />
+          <Image source={require('../Images/home_icon_light.png')} style={styles.infoIcon} />
         </View>
         );
     }
