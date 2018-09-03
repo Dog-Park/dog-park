@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import { TopBar } from './TopBar.js';
 import { Constants } from './Constants';
-import MapView from 'react-native-maps';
+import MapView, { Marker} from 'react-native-maps';
 import { NavigationBar, _onHome, _onNavigate, _onSettings } from './NavigationBar.js';
 
 export class MainView extends React.Component {
@@ -13,7 +13,10 @@ export class MainView extends React.Component {
           horizontal={true}
           pagingEnabled={true}
           showsHorizontalScrollIndicator={false}
-          contentOffset={{x: screenWidth, y: 0}} >
+          contentOffset={{x: screenWidth, y: 0}}
+          onMomentumScrollEnd={() => {
+            alert(JSON.stringify(this.props.locationX.coords.latitude));
+          }}>
 
           <View style={styles.contentHome}>
             <Text style={styles.titleText}>Home</Text>
@@ -33,7 +36,14 @@ export class MainView extends React.Component {
                 latitudeDelta:0.0922,
                 longitudeDelta: 0.0421
               }}
-            />
+            >
+              <Marker
+                coordinate={{
+                  latitude: 37,
+                  longitude: -122
+                }}
+              />
+            </MapView>
           </View>
 
           <View style={styles.content}>
