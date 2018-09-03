@@ -17,3 +17,12 @@ class App extends React.Component {
 }
 
 export default App;
+
+// {
+//   "presets": ["babel-preset-expo"],
+//   "env": {
+//     "development": {
+//       "plugins": ["transform-react-jsx-source"]
+//     }
+//   }
+// }

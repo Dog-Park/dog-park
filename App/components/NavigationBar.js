@@ -8,38 +8,21 @@ import { Constants } from './Constants.js';
 export class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    selHome: false,
-    selMap: true,
-    selSet: false
-    }
     this._onHome = this._onHome.bind(this);
     this._onMap = this._onMap.bind(this);
     this._onSettings = this._onSettings.bind(this);
   }
 
   _onHome() {
-    this.setState({
-        selHome: true,
-        selMap: false,
-        selSet: false
-    });
+    this.props.change('GOTO_HOME');
   }
 
   _onMap() {
-    this.setState({
-      selHome: false,
-      selMap: true,
-      selSet: false
-    });
+    this.props.change('GOTO_MAP');
   }
 
   _onSettings() {
-    this.setState({
-      selHome: false,
-      selMap: false,
-      selSet: true
-    });
+    this.props.change('GOTO_SETTINGS');
   }
 
   render() {
@@ -47,17 +30,17 @@ export class NavigationBar extends React.Component {
       <View style={styles.navBubble}>
         <TouchableWithoutFeedback onPress={this._onHome}>
           <View style={styles.navButton}>
-            <HomeIcon highlight={this.state.selHome}/>
+            <HomeIcon highlight={this.props.currentPage === 'GOTO_HOME'}/>
           </View>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={this._onMap}>
           <View style={styles.navButton}>
-            <MapIcon highlight={this.state.selMap}/>
+            <MapIcon highlight={this.props.currentPage === 'GOTO_MAP'}/>
           </View>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={this._onSettings}>
           <View style={styles.navButton}>
-            <SettingsIcon highlight={this.state.selSet}/>
+            <SettingsIcon highlight={this.props.currentPage === 'GOTO_SETTINGS'}/>
           </View>
         </TouchableWithoutFeedback>
       </View>

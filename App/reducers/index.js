@@ -1,14 +1,17 @@
-import { Pages } from '../actions'
+import { combineReducers } from 'redux'
+import { Pages, SET_PAGE, setPage } from '../actions/index.js'
+const { GOTO_MAP } = Pages
 
-const rootReducer = (state = Pages.GOTO_MAP, action) => {
-  switch (action.type) {
-    case 'GOTO_HOME':
-    case 'GOTO_MAP':
-    case 'GOTO_SETTINGS':
-      return action.type;
-    default:
-      return state
+function changePage(state = GOTO_MAP, action) {
+  if (action.type === SET_PAGE ) {
+  	return action.page;
   }
+  else
+  	return state;
 }
+
+const rootReducer = combineReducers({
+	changePage
+})
 
 export default rootReducer;

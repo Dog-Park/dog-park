@@ -6,19 +6,31 @@ import MapView from 'react-native-maps';
 import { NavigationBar, _onHome, _onNavigate, _onSettings } from './NavigationBar.js';
 
 export class MainView extends React.Component {
-  handleScroll() {
-    alert("scrolled");
+  constructor(props) {
+    super(props);
+    this.onScroll = this.onScroll.bind(this);
+    this.scrollTo = this.scrollTo.bind(this);
+  }
+
+  scrollTo() {
+    this.refs._scrollView.scrollTo({x: this.props.currentPage, y: 0, animated: true});
+  }
+
+  onScroll(event: Object) {
+    this.props.change(event.nativeEvent.contentOffset.x);
   }
 
   render() {
-    return (
-      <View style={styles.talkBubbleSquare} >
+    return(
+      <View
+      style={styles.talkBubbleSquare} >
         <ScrollView
+          ref='_scrollView'
           horizontal={true}
           pagingEnabled={true}
           showsHorizontalScrollIndicator={false}
-          contentOffset={{x: screenWidth, y: 0}}
-          onMomentumScrollEnd={this.handleScroll} >
+          contentOffset={{x: this.props.currentPage, y: 0}}
+          onMomentumScrollEnd={ this.onScroll } >
 
           <View style={styles.contentHome}>
             <Text style={styles.titleText}>Home</Text>
@@ -29,7 +41,7 @@ export class MainView extends React.Component {
           </View>
 
           <View style={styles.contentMap}>
-            <Text style={styles.text}>"Welcome to the Planetarium Parking Lot!"</Text>
+            <Text style={styles.welcomeText}>Welcome to the Planetarium Parking Lot!</Text>
             <MapView
               style={styles.map}
               initialRegion={{
@@ -79,17 +91,19 @@ const styles = StyleSheet.create({
     borderRadius: Constants.BORDER_EDGES,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     width: screenWidth - 40
   },
   text: {
-    color: 'white'
+    color: 'white',
+    margin: 40
   },
   map: {
     left: 20,
     right: 20,
     top: 100,
     bottom: 50,
+    borderRadius: Constants.BORDER_EDGES,
     position: 'absolute'
   },
   titleText: {
@@ -99,6 +113,12 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     marginTop: 20
+  },
+  welcomeText: {
+    fontSize: 18,
+    color: 'white',
+    margin: 20,
+    textAlign: 'center'
   },
   bodyText: {
     color: 'white',
