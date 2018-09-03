@@ -4,7 +4,7 @@ const { GOTO_MAP } = Pages
 
 function changePage(state = GOTO_MAP, action) {
   if (action.type === SET_PAGE ) {
-  	return action.page;
+  	return action.page;  /// pass state as well with spread operator
   }
   else
   	return state;
