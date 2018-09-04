@@ -1,7 +1,7 @@
  {
    "expo": {
     "name": "Your App Name",
-    "icon": "./Images/map_icon_dark.png",
+    "icon": "./App/Images/map_icon_dark.png",
     "version": "1.0.0",
     "slug": "your-app-slug",
     "sdkVersion": "27.0.0",

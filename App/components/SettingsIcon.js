@@ -7,13 +7,13 @@ export class SettingsIcon extends React.Component {
     if(this.props.highlight) {
       return (
         <View>
-          <Image source={require('./Images/settings_icon_dark.png')} style={styles.settingsIcon} />
+          <Image source={require('../Images/settings_icon_dark.png')} style={styles.settingsIcon} />
         </View>
         );
     } else {
       return (
         <View>
-          <Image source={require('./Images/settings_icon_light.png')} style={styles.settingsIcon} />
+          <Image source={require('../Images/settings_icon_light.png')} style={styles.settingsIcon} />
         </View>
         );
     }

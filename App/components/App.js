@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, AppState, Platform } from 'react-native';
 import { TopBar } from './TopBar.js';
-import { MainView } from './MainView.js';
+import MainViewContainer from '../containers/MainViewContainer.js';
 import { Title } from './Title.js';
-import { NavigationBar } from './NavigationBar.js';
+import NavigationBarContainer from '../containers/NavigationBarContainer.js';
 import { Constants } from './Constants.js';
 import { ConstantsX, Location, Permissions } from 'expo';
 
@@ -64,9 +64,8 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <TopBar />
         <Title />
-        <Text style={styles.paragraphLocation}>{text}</Text>
-        <MainView locationX={this.state.location}/>
-        <NavigationBar />
+        <MainViewContainer locationX={this.state.location}/>
+        <NavigationBarContainer />
       </View>
     );
   }
@@ -77,9 +76,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Constants.BACK_COLOR,
     alignItems: 'center',
-    paddingTop: 15,
+    paddingTop: 15
     //paddingLeft: 15,
     //paddingRight: 15
+
   },
   containerLocation: {
     flex: 1,
