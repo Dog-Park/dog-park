@@ -7,7 +7,7 @@ import NavigationBarContainer from '../containers/NavigationBarContainer.js';
 import { Constants } from './Constants.js';
 import { ConstantsX, Location, Permissions } from 'expo';
 
-export default class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleAppStateChange = this.handleAppStateChange.bind(this);
