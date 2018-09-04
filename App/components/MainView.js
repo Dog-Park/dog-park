@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import { TopBar } from './TopBar.js';
 import { Constants } from './Constants';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { NavigationBar, _onHome, _onNavigate, _onSettings } from './NavigationBar.js';
 
 export class MainView extends React.Component {
@@ -49,8 +49,14 @@ export class MainView extends React.Component {
                 longitude: -122.4324,
                 latitudeDelta:0.0922,
                 longitudeDelta: 0.0421
-              }}
-            />
+              }} >
+              <Marker
+                coordinate={{
+                  latitude: 37,
+                  longitude: -122
+                }}
+              />
+            </MapView>
           </View>
 
           <View style={styles.content}>
